@@ -22,6 +22,27 @@ const cardsEl = [];
 
  const cardsData = getCardsData();
 
+ //randomize cards
+
+ function shuffle(cardsData) {
+     var currentIndex = cardsData.length, temporaryValue, randomIndex;
+     
+     while(0 !== currentIndex) {
+         randomIndex = Math.floor(Math.random() * currentIndex);
+         currentIndex -= 1;
+
+         temporaryValue = cardsData[currentIndex];
+         cardsData[currentIndex] = cardsData[randomIndex];
+         cardsData[randomIndex] = temporaryValue;
+     }
+
+     return cardsData;
+ }
+
+ shuffle(cardsData);
+
+
+
 // const cardsData = [
 //   {
 //     question: 'What must a variable begin with?',
